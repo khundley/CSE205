@@ -20,7 +20,7 @@ public class H01_43 {
         
         //prints lines from our source file to a new .txt file
         while(input.hasNext()){
-            output.println(input.nextLine())
+            output.println(input.nextLine());
         }
 
         //close out objects
