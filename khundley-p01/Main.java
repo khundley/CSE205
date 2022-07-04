@@ -1,4 +1,3 @@
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
@@ -10,7 +9,7 @@ public class Main {
 
     private void run() throws FileNotFoundException {
 
-        //attempting to open the input file
+        // attempting to open the input file
         String desiredFile = "p01-in.txt";
         File inFile = new File(desiredFile);
         Scanner input = null;
@@ -21,7 +20,7 @@ public class Main {
             System.exit(-100);
         }
 
-        //attempting to open the output file
+        // attempting to open the output file
         PrintWriter outFile = null;
         try {
             outFile = new PrintWriter("p01-runs.txt");
@@ -36,10 +35,7 @@ public class Main {
             list.add(input.nextInt());
         }
 
-        for (int i = 1; i < 12; i++){
-            int runs = runsUp(list, i) + runsDown(list, i);
-            System.out.println("runs_"+i+": "+runs);
-        }
+        executeOps(list, outFile);
 
         outFile.close();
         input.close();
@@ -48,7 +44,30 @@ public class Main {
 
     }
 
-    //runsUp()
+    /* 
+    * executeOps() carries out the main functions of this program, using one
+    * for loop to calculate the total # of runs, and another to identify the total
+    * # of runs to each run length possible.
+    */
+    private void executeOps(ArrayList<Integer> list, PrintWriter output) {
+        int totalRuns = 0;
+        for (int i = 1; i < 12; i++){
+            totalRuns += runsUp(list, i) + runsDown(list, i);
+        }
+        output.println("runs_total: " + totalRuns);
+        
+        for (int i = 1; i < 12; i++){
+            int runs = runsUp(list, i) + runsDown(list, i);
+            output.println("runs_"+i+": "+runs);
+        }
+    }
+
+    /*
+    * runsUp() progresses through the provided list, checking for sequences of increasing
+    * numbers. Once a sequence is detected, its length is checked against our desired run
+    * length. Each time a match occurs, int total is incremented by 1. total is 
+    * returned at the end, identifying the total of number of runs which match our desiredRunLength.
+    */    
     private int runsUp(ArrayList<Integer> list, int desiredRunLength){
         int total = 0;
         int length = list.size();
@@ -64,14 +83,36 @@ public class Main {
                 if (tempRunLength == desiredRunLength) {
                     total++;
                 }
+                i=j;
             }
         }
         return total;
     }
 
-    //runsDown() 
+    /*
+    * runsDown() progresses through the provided list, checking for sequences of decreasing
+    * numbers. Once a sequence is detected, its length is checked against our desired run
+    * length. Each time a match occurs, int total is incremented by 1. total is 
+    * returned at the end, identifying the total of number of runs which match our desiredRunLength.
+    */
     private int runsDown(ArrayList<Integer> list, int desiredRunLength){
         int total = 0;
+        int length = list.size();
+        for(int i = 0; i < length; i++){
+            if (i != (length-1) && desiredRunLength <= (length-1-i) && list.get(i) > list.get(i+1)){
+                int tempRunLength = 1;
+                int j = i+1;
+                while(j != length-1 && list.get(j) > list.get(j+1)){
+                    j++;
+                    tempRunLength++;
+                }
+
+                if (tempRunLength == desiredRunLength) {
+                    total++;
+                }
+                i=j;
+            }
+        }
         return total;
     }
     
