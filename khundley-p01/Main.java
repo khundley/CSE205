@@ -1,6 +1,20 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.*;
+//********************************************************************************************************
+// CLASS: Main
+//
+// DESCRIPTION
+// This file includes methods which read in integers from an input text file (p01-in.txt), storing them 
+// within an ArrayList. This array list is then scanned for increasing and decreasing sequences of 
+// numbers. The quantity and length of these sequences is then printed to a new file (p01-runs.txt).
+//
+// COURSE AND PROJECT INFO
+// CSE205 Object Oriented Programming and Data Structures, semester and year // Project Number: project-number
+//
+// AUTHOR: your-name, your-asuriteid, your-email-addr 
+//********************************************************************************************************
+
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
         Main mainObj = new Main();
@@ -51,12 +65,12 @@ public class Main {
     */
     private void executeOps(ArrayList<Integer> list, PrintWriter output) {
         int totalRuns = 0;
-        for (int i = 1; i < 12; i++){
+        for (int i = 1; i < list.size(); i++){
             totalRuns += runsUp(list, i) + runsDown(list, i);
         }
         output.println("runs_total: " + totalRuns);
         
-        for (int i = 1; i < 12; i++){
+        for (int i = 1; i < list.size(); i++){
             int runs = runsUp(list, i) + runsDown(list, i);
             output.println("runs_"+i+": "+runs);
         }
