@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-import java.io.*;
 //********************************************************************************************************
 // CLASS: Main
 //
@@ -10,10 +7,18 @@ import java.io.*;
 // numbers. The quantity and length of these sequences is then printed to a new file (p01-runs.txt).
 //
 // COURSE AND PROJECT INFO
-// CSE205 Object Oriented Programming and Data Structures, semester and year // Project Number: project-number
-//
-// AUTHOR: your-name, your-asuriteid, your-email-addr 
+// CSE205 Object Oriented Programming and Data Structures, Summer Session B 2022 // Project Number: 01
+// TEAM: TEAM 5
+// AUTHORS:
+// ANDREW BRAND   | ABRAND3  | A.BRAND101691@YAHOO.COM
+// KENYON HUNDLEY | KHUNDLEY | KENYONHUNDLEY@YAHOO.COM
+// ISAIAH POTTS   | IPOTTS1  | ZAHPOTTS123@GMAIL.COM
+// ANTHONY SPAUGH | ASPAUGH  | ASPAUGH@ASU.EDU
 //********************************************************************************************************
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.io.*;
 
 public class Main {
     public static void main(String[] args) throws FileNotFoundException {
