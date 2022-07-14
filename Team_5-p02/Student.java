@@ -21,21 +21,20 @@ public abstract class Student implements Comparable<Student> {
     String mLastName;
     double mTuition;
     
-    Student(int mCredits, String mFirstName, String mId, String mLastName, double mTuition) {
-    	
-    	this.mCredits = mCredits;
-    	this.mFirstName = mFirstName;
-    	this.mId = mId;
-    	this.mLastName = mLastName;
-    	this.mTuition = mTuition;
-    	
-    }
 
     /**
      * Creates a Student object and initializes the mId, mFirstName, and mLastName instance
      * variables.
      */
-    public abstract void calcTuition();
+
+    Student(String pId, String pFirstName, String pLastName) {
+    	
+    	this.mFirstName = pFirstName;
+    	this.mId = pId;
+    	this.mLastName = pLastName;
+    	
+    }
+
 
     /**
      * calcTuition() is to be implemented by subclasses of Student. Remember that abstract methods
@@ -46,6 +45,7 @@ public abstract class Student implements Comparable<Student> {
      * Student.
      */
     
+    public abstract void calcTuition();
 
     /**
      * The java.lang.Comparable<T> interface declares one method int compareTo(T obj) that must be
@@ -116,39 +116,37 @@ public abstract class Student implements Comparable<Student> {
      */
     
     public void setCredits(int pCredits) {
+        this.mCredits = pCredits;
 	}
 
     /**
      * Mutator method for mFirstName.
      */
     public void setFirstName(String FirstName) {
-    	
+    	this.mFirstName = FirstName;
     }
 
     /**
      * Mutator method for mId.
      */
     public void setId(String pId) {
-    	
+    	this.mId = pId;
     }
     
     /**
      * Mutator method for mLastName.
      */
-    
     public void setLastName(String pLastName) {
-    	
+    	this.mLastName = pLastName;
     }
     
 
     /**
      * Mutator method for mTuition.
      */
-    public void setTuition(double pTutition) {
-    	
+    public void setTuition(double pTuition) {
+    	this.mTuition = pTuition;
     }
-
-
 }
 
 	
