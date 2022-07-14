@@ -2,8 +2,8 @@
 // CLASS: Main
 //
 // DESCRIPTION
-// This is the Main class for CSE205 Project 2. The prgram is desidned to read a text file of student
-// information, calcuate tution for the studnets, then out put the restults into a text file in asending
+// This is the Main class for CSE205 Project 2. The prgram is designed to read a text file of student
+// information, calcuate tution for the studnets, then output the results into a text file in asending
 // student id order.
 //
 // COURSE AND PROJECT INFO
