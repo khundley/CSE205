@@ -2,9 +2,9 @@
 // CLASS: Main
 //
 // DESCRIPTION
-// This is the Main class for CSE205 Project 2. The prgram is designed to read a text file of student
-// information, calcuate tution for the studnets, then output the results into a text file in asending
-// student id order.
+// This is the Main class for CSE205 Project 2. The program is designed to read a text file of student
+// information, calcuate their tuition according to each one's status, then output the results into a 
+// text file in ascending order according to student ID number.
 //
 // COURSE AND PROJECT INFO
 // CSE205 Object Oriented Programming and Data Structures, Summer Session B 2022 // Project Number: 02

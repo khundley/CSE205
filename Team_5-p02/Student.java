@@ -3,7 +3,10 @@
 //
 // DESCRIPTION
 // This is the Student class for CSE205 Project 2. 
-//  It is an abstract class that implements the java.lang.Comparable<T> interface
+// It is an abstract class that implements the java.lang.Comparable<T> interface and contains several
+// simple accessor and mutator of Student type objects. It is the superclass of OnCampusStudent and
+// OnlineStudent.
+//
 // COURSE AND PROJECT INFO
 // CSE205 Object Oriented Programming and Data Structures, Summer Session B 2022 // Project Number: 02
 // TEAM: TEAM 5

@@ -1,9 +1,10 @@
 //********************************************************************************************************
-// CLASS: Student
+// CLASS: OnlineStudent
 //
 // DESCRIPTION
 // This is the Student class for CSE205 Project 2. 
-//  It is an abstract class that implements the java.lang.Comparable<T> interface
+// It is a public class that extends Student class with methods that only apply to online students.
+
 // COURSE AND PROJECT INFO
 // CSE205 Object Oriented Programming and Data Structures, Summer Session B 2022 // Project Number: 02
 // TEAM: TEAM 5
@@ -13,8 +14,6 @@
 // ISAIAH POTTS   | IPOTTS1  | ZAHPOTTS123@GMAIL.COM
 // ANTHONY SPAUGH | ASPAUGH  | ASPAUGH@ASU.EDU
 //********************************************************************************************************
-
-import java.util.ArrayList;
 
 public class OnlineStudent extends Student {
     private boolean mTechFee;

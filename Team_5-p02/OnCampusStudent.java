@@ -1,9 +1,9 @@
 //********************************************************************************************************
-// CLASS: TuitionConstants
+// CLASS: OnCampusStudent
 //
 // DESCRIPTION
-// This class maintains the constant values used to calcuate tuition.
-//
+// This is a public class that extends Student class with methods that only apply to on-campus students.
+
 // COURSE AND PROJECT INFO
 // CSE205 Object Oriented Programming and Data Structures, Summer Session B 2022 // Project Number: 02
 // TEAM: TEAM 5
