@@ -28,7 +28,7 @@ public class Main {
      * is the starting point of execution for the program.
      * @param pArgs allows for command line arguments
      */
-    public void main(String[] pArgs) throws FileNotFoundException {
+    public static void main(String[] pArgs) throws FileNotFoundException {
         Main mainObj = new Main();
         mainObj.run();
     }
@@ -250,7 +250,7 @@ public class Main {
         PrintWriter out = new PrintWriter(outFileName);
         
         for (Student student : pStudentList) {
-            out.printf("%-16s%-20s%-15s%8.2f", student.getId(), student.getLastName(), student.getFirstName(), student.getTuition());
+            out.printf("%-16s%-20s%-15s%8.2f\n", student.getId(), student.getLastName(), student.getFirstName(), student.getTuition());
         }
         
         out.close();
