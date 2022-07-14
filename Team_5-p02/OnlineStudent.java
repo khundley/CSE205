@@ -16,42 +16,38 @@
 
 import java.util.ArrayList;
 
+public class OnlineStudent extends Student {
+    private boolean mTechFee;
 
-public class OnlineStudent extends Student
-{
-private boolean mTechFee;
+    /**
+     * Creates a OnlineStudent object and initializes the mId, mFname, and mLname
+     * instance variables.
+     */
+    public OnlineStudent(String pId, String pFname, String pLname) {
+        super(pId, pFname, pLname);
+    }
 
-/**Creates a OnlineStudent object and initializes the mId, mFname, and mLname instance variables. */
-public OnlineStudent(String pId, String pFname, String pLname)
-{
-super(pId, pFname, pLname);
-}
+    /** * Calculates the student's tuition */
+    @Override
+    public void calcTuition() {
+        double tuition = 0;
 
-/** * Calculates the student's tuition */
-@Override
-public void calcTuition()
-{
-double tuition = 0;
+        tuition += getCredits() * TuitionConstants.ONLINE_CREDIT_RATE;
 
-tuition += getCredits() * TuitionConstants.ONLINE_CREDIT_RATE;
+        if (getTechFee() == true) {
+            tuition += TuitionConstants.ONLINE_TECH_FEE;
+        }
 
-if (getTechFee() == true)
-{
-tuition += TuitionConstants.ONLINE_TECH_FEE;
-}
+        setTuition(tuition);
+    }
 
-setTuition(tuition);
-}
+    /** Accessor method for mTechFee */
+    public boolean getTechFee() {
+        return mTechFee;
+    }
 
-/** Accessor method for mTechFee */
-public boolean getTechFee()
-{
-return mTechFee;
-}
-
-/**Mutator method for mTechFee */
-public void setTechFee(boolean pTechFee)
-{
-mTechFee = pTechFee;
-}
+    /** Mutator method for mTechFee */
+    public void setTechFee(boolean pTechFee) {
+        mTechFee = pTechFee;
+    }
 }
