@@ -28,7 +28,7 @@ public class Main {
      * is the starting point of execution for the program.
      * @param pArgs allows for command line arguments
      */
-    public void main(String[] pArgs) {
+    public void main(String[] pArgs) throws FileNotFoundException {
         Main mainObj = new Main();
         mainObj.run();
     }
@@ -133,7 +133,7 @@ public class Main {
      * Return studentList
      */
     private ArrayList<Student> readFile() throws FileNotFoundException {
-        ArrayList<Student> studentList;
+        ArrayList<Student> studentList = new ArrayList<Student>();
         String inFileName = "p02-students.txt";
         File inFile = new File(inFileName);
         Scanner in = new Scanner(inFile);
@@ -177,12 +177,12 @@ public class Main {
         String id = pIn.next();
         String lname = pIn.next();
         String fname = pIn.next();
-        OnCampusStudent student = OnCampusStudent(id, fname, lname);
+        OnCampusStudent student = new OnCampusStudent(id, fname, lname);
         String res = pIn.next();
         double fee = pIn.nextDouble();
         int credits = pIn.nextInt();
         
-        if res.equals("R") {
+        if (res.equals("R")) {
             student.setResidency(OnCampusStudent.RESIDENT);
         }
         else {
@@ -221,7 +221,7 @@ public class Main {
         String fee = pIn.next();
         int credits = pIn.nextInt();
         
-        if fee.equals("T") {
+        if (fee.equals("T")) {
             student.setTechFee(true);
         }
         else {
