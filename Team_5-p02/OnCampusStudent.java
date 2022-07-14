@@ -13,67 +13,58 @@
 // ISAIAH POTTS   | IPOTTS1  | ZAHPOTTS123@GMAIL.COM
 // ANTHONY SPAUGH | ASPAUGH  | ASPAUGH@ASU.EDU
 //********************************************************************************************************
-public class OnCampusStudent extends Student
-{
-public static int RESIDENT = 1;
-public static int NON_RESIDENT = 2;
-private int mResident;
-private double mProgramFee;
+public class OnCampusStudent extends Student {
+    public static int RESIDENT = 1;
+    public static int NON_RESIDENT = 2;
+    private int mResident;
+    private double mProgramFee;
 
-/**Creates a OnCampusStudent object and initializes the mId, mFname, and mLname instance variables.*/
-public OnCampusStudent(String pId, String pFname, String pLname)
-{
-super(pId, pFname, pLname);
+    /**
+     * Creates a OnCampusStudent object and initializes the mId, mFname, and mLname
+     * instance variables.
+     */
+    public OnCampusStudent(String pId, String pFname, String pLname) {
+        super(pId, pFname, pLname);
+    }
+
+    /** Calculates the student's tuition */
+    @Override
+    public void calcTuition() {
+        double tuition = 0;
+        int credits = getCredits();
+
+        if (getResidency() == RESIDENT) {
+            tuition += TuitionConstants.ONCAMP_RES_BASE;
+        } else {
+            tuition += TuitionConstants.ONCAMP_NONRES_BASE;
+        }
+
+        tuition += getProgramFee();
+
+        if (credits > TuitionConstants.ONCAMP_MAX_CREDITS) {
+            tuition += (credits - TuitionConstants.ONCAMP_MAX_CREDITS) * TuitionConstants.ONCAMP_ADD_CREDITS;
+        }
+
+        setTuition(tuition);
+    }
+
+    /** Accessor method for mProgramFee */
+    public double getProgramFee() {
+        return mProgramFee;
+    }
+
+    /** Accessor method for mResident */
+    public int getResidency() {
+        return mResident;
+    }
+
+    /** Mutator method for mProgramFee */
+    public void setProgramFee(double pProgramFee) {
+        mProgramFee = pProgramFee;
+    }
+
+    /** Mutator method for mResident */
+    public void setResidency(int pResident) {
+        mResident = pResident;
+    }
 }
-
-/**Calculates the student's tuition*/
-@Override
-public void calcTuition()
-{
-double tuition = 0;
-int credits = getCredits();
-
-if (getResidency() == RESIDENT)
-{
-tuition += TuitionConstants.ONCAMP_RES_BASE;
-}
-else
-{
-tuition += TuitionConstants.ONCAMP_NONRES_BASE;
-}
-
-tuition += getProgramFee();
-
-if (credits > TuitionConstants.ONCAMP_MAX_CREDITS)
-{
-tuition += (credits - TuitionConstants.ONCAMP_MAX_CREDITS) * TuitionConstants.ONCAMP_ADD_CREDITS;
-}
-
-setTuition(tuition);
-}
-
-/** Accessor method for mProgramFee */
-public double getProgramFee()
-{
-return mProgramFee;
-}
-
-/**Accessor method for mResident */
-public int getResidency()
-{
-return mResident;
-}
-
-/**Mutator method for mProgramFee*/
-public void setProgramFee(double pProgramFee)
-{
-mProgramFee = pProgramFee;
-}
-
-/**Mutator method for mResident*/
-public void setResidency(int pResident)
-{
-mResident = pResident;
-}
-}
-
